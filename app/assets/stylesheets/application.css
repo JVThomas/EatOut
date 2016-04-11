@@ -1,0 +1,167 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*///////////////////LAYOUT////////////////////////////*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  margin:0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 3% 5%;
+  max-width: 1000px;
+}
+
+.row::before,
+.row::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.navbar{
+  height: 50px;
+  background-color: rgb(197, 197, 197);
+}
+
+.one,
+.one-third,
+.two-thirds,
+.one-fourth,
+.half {
+  width: 100%;
+}
+
+/*///////////////////STYLING////////////////////////////*/
+.navbar{
+  position:fixed;
+  width:100%;
+}
+.navbar a{
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-logo{
+  font-size: 2em;
+  margin-top: 5px;
+  padding-left: 1.5%;
+}
+
+.navbar-links{
+  margin-top: 10px;
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.navbar-links a{
+  margin-right: 2%;
+}
+
+.btn{
+  font: bold 1em;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 2px  ;
+}
+
+#alert, #error_explanation{
+  float:none;
+  border:none;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 1% 1%; 
+  text-align: center;
+  background-color: rgb(238, 214, 214);
+}
+
+#notice{
+  float:none;
+  border:none;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 1% 1%; 
+  text-align: center;
+  background-color: rgb(216, 238, 204); 
+}
+
+.field_with_errors input, .field_with_errors textarea{
+  background-color: rgb(238, 214, 214);
+}
+
+form{
+  margin:0;
+  width:50%;
+  text-align: left;
+}
+
+h1{
+  text-align: center;
+}
+
+ul{
+  padding:0;
+}
+
+li{
+  list-style-type: none;
+  text-align: center;  
+}
+
+
+/*///////////////////BREAKPOINTS////////////////////////////*/
+@media only screen and (min-width: 800px) {
+  .one {
+    width: 100%;
+  }
+  .half {
+    width: calc(100% / 2);
+  }
+  .one-third {
+    width: calc(100% / 3);
+  }
+  .one-fourth {
+    width: calc(100% / 4);
+  }
+  .two-thirds {
+    width: calc(100% / 3 * 2);
+  }
+  .column {
+    float: left;
+  }
+}
