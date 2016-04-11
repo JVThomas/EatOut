@@ -6,6 +6,10 @@
     <a href="">Test 3</a>
   </div>
   <div class = "container">
+    <div id = "welcomeBanner" ng-show="!home.user">
+      <p> Welcome to EatOut!</p>
+      <p>Sign in or log in to continue</p>
+    </div>
     <div ui-view></div>
   </div>
 </div>
