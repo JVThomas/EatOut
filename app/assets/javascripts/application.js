@@ -16,6 +16,7 @@
 //= require angular-resource.min
 //= require angular-ui-router.min
 //= require angular-messages.min
+//= require angular-cookies.min
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks

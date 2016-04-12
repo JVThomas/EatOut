@@ -1,14 +1,15 @@
 <div class = "navbar row">
   <div class = "one-third navbar-logo column">EatOut</div>
   <div class = "navbar-links two-thirds column">
-    <a href="">Test 1</a>
-    <a href="">Test 2</a>
-    <a href="">Test 3</a>
+    <a href="" ui-sref = "home.login" ng-show="!home.user">Login</a>
+    <a href="" ui-sref = "home.register" ng-show="!home.user">Register</a>
+    <a href="" ng-click = "home.logout()" ng-show="home.user">Logout</a>
+    <a href="" ng-show="home.user">Home</a>
   </div>
   <div class = "container">
     <div id = "welcomeBanner" ng-show="!home.user">
       <p> Welcome to EatOut!</p>
-      <p>Sign in or log in to continue</p>
+      <p>Register or log in to continue</p>
     </div>
     <div ui-view></div>
   </div>
