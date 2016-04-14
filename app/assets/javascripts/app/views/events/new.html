@@ -18,11 +18,14 @@
 
 </div>
 
-<div id = "venueSearchResults">
+<div id = "venueSearchResults" ng-show="(event.searchResults.length > 0)">
   <label>Filter Search Results: </label> <input type = "text" ng-model = "event.searchTerm" ng-change = "event.refilter()"/><br>
-  <ul class = "results">
-    <li ng-repeat = "venue in event.filteredList track by venue.id">
-      {{venue.name}}
-    </li>
-  </ul>
+  <ul ng-show="(event.filteredList.length === 0)"><li>No venues found</li></ul>
+  <div ng-show = "(event.filteredList.length > 0)">
+    <ul class = "results">
+      <li ng-repeat = "venue in event.filteredList track by venue.id">
+        {{venue.name}}
+      </li>
+    </ul>
+  </div>
 </div>
