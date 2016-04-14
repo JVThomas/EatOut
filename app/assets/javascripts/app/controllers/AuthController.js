@@ -5,7 +5,7 @@ function AuthController($scope,$state,Auth){
       password: $scope.user.password
     }
     Auth.login(credentials).then(function(){
-      $state.go('home');
+      $state.go('^.events');
     }, function(error){
       debugger;
       alert(error.statusText);
@@ -20,7 +20,7 @@ function AuthController($scope,$state,Auth){
       password_confirmation: $scope.user.passwordConfirmation
     }
     Auth.register(credentials).then(function(resp){
-      $state.go('home');
+      $state.go('^.events');
     },function(error){
       alert(error.statusText);
     });

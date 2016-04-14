@@ -27,7 +27,9 @@ gem 'devise'
 
 gem 'angular-rails-templates'
 
-gem 'angular_rails_csrf'
+gem 'active_model_serializers'
+
+gem 'faraday'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,6 +44,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'dotenv-rails'
+  gem 'pry'
 end
 
 group :development do
