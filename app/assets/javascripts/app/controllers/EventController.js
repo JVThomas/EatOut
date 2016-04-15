@@ -16,14 +16,27 @@ function EventController($filter,FoursquareService,$cookies){
     ctrl.filteredList = $filter('filter')(ctrl.searchResults, ctrl.searchTerm);
   };
 
-  ctrl.panelActivate = function(venue){
+  ctrl.selectVenue = function(venue){
     ctrl.userEvent.venue = {
       name: venue.name,
       location: venue.location.formattedAddress,
       contact: venue.contact.formattedPhone,
       visits: venue.stats.usersCount
     };
+    ctrl.panelActivate();
+  }
+
+  ctrl.resetVenue = function(){
+    ctrl.userEvent.venue = {};
+    ctrl.panelActivate();
+  }
+
+  ctrl.panelActivate = function(){
     ctrl.activePanel = !ctrl.activePanel;
+  }
+
+  ctrl.submitEvent = function(){
+    
   }
 
 }

@@ -27,7 +27,7 @@
               </ul>
             <div>Phone: {{venue.contact.formattedPhone}}</div>
             <div># of Foursquare users that visited: {{venue.stats.usersCount}}</div>
-            <button class = "btn" ng-click = "event.panelActivate(venue)">Select Venue</button>
+            <button class = "btn" ng-click = "event.selectVenue(venue)">Select Venue</button>
           </div><br>
         </li>
       </ul>
@@ -37,7 +37,7 @@
 
 <div id = "eventFormPanel" ng-show = "event.activePanel">
   <div id = "venueDetails">
-    <h3>Venue</h3>
+    <h3>Event</h3>
     <div>{{event.userEvent.venue.name}}</div>
       <ul>
         <li ng-repeat = "addressLine in event.userEvent.venue.location">{{addressLine}}</li>
@@ -62,5 +62,6 @@
       <label>Notes: </label> <input name = "time" type = "textfield" cols = "80" rows = "20" ng-model = "event.userEvent.note"/><br>
     </div><br>
     <button class = "btn" ng-click = "event.submitEvent()">Submit Event</button>
+    <button class = "btn" ng-click = "event.resetVenue()">Change Venue</button>
   </form>
 </div>
