@@ -13,6 +13,7 @@
   </form><br>
 </div>
 
+
 <div id = "resultWrapper" ng-show="!(event.activePanel)">
   <div id = "venueSearchResults" ng-show="(event.searchResults.length > 0)">
     <label>Filter Search Results: </label> <input type = "text" ng-model = "event.searchTerm" ng-change = "event.refilter()"/><br>
@@ -35,6 +36,7 @@
   </div>
 </div>
 
+
 <div id = "eventFormPanel" ng-show = "event.activePanel">
   <div id = "venueDetails">
     <h3>Event</h3>
@@ -44,7 +46,6 @@
       </ul>
     <div>Phone: {{event.userEvent.venue.contact}}</div>
   </div><br>
-
   <form name = "eventDetails">
     <div = "form-group">
       <div ng-if = "eventDetails.date.$touched" ng-show = "eventDetails.date.$error.required">Please insert a date</div>

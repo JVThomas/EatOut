@@ -42,7 +42,7 @@ angular
       }) 
       .state('home.createEvent',{
         url:'newevent',
-        templateUrl:'app/views/events/new.html',
+        templateUrl:'app/views/events/event.html',
         controller: 'EventController as event',
         resolve:{
           authenticate: authenticate
