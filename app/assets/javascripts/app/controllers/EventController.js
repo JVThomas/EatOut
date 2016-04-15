@@ -1,6 +1,8 @@
-function EventController($filter, FoursquareService){
+function EventController($filter,FoursquareService,$cookies){
+  debugger;
   var ctrl = this;
-
+  ctrl.activePanel = false;
+  ctrl.userEvent = {};
   ctrl.searchTerm = '';
 
   ctrl.findVenues = function(){
@@ -12,8 +14,17 @@ function EventController($filter, FoursquareService){
 
   ctrl.refilter = function () {
     ctrl.filteredList = $filter('filter')(ctrl.searchResults, ctrl.searchTerm);
-    debugger;
   };
+
+  ctrl.panelActivate = function(venue){
+    ctrl.userEvent.venue = {
+      name: venue.name,
+      location: venue.location.formattedAddress,
+      contact: venue.contact.formattedPhone,
+      visits: venue.stats.usersCount
+    };
+    ctrl.activePanel = !ctrl.activePanel;
+  }
 
 }
 
