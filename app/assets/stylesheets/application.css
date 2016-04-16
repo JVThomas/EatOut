@@ -54,6 +54,9 @@ body{
 }
 
 /*///////////////////STYLING////////////////////////////*/
+.angular-with-newlines {
+  white-space: pre-line;
+}
 .navbar{
   position:fixed;
   width:100%;

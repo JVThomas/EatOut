@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root 'application#main'
   devise_for :users
 
-  resources :users, only:[:show] do
-    resources :events, only:[:create, :show, :delete, :index, :update] do
-      resources :notes, only:[:create, :show, :delete, :index, :update]
-      resources :venues, only:[:create, :show]
-    end
-  end
+  resources :events, only:[:create, :show, :destroy, :update, :index]
+  resources :venues, only:[:create, :update]
+  resources :notes, only:[:create, :update]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
