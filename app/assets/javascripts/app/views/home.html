@@ -4,10 +4,10 @@
     <a href="" ui-sref = "home.login" ng-show="home.user === undefined">Login</a>
     <a href="" ui-sref = "home.register" ng-show="home.user === undefined">Register</a>
     <a href="" ng-click = "home.logout()" ng-show = "home.user !== undefined">Logout</a>
-    <a href="" ng-show="home.user">Home</a>
+    <a href="" ui-sref = "home.main" ng-show="home.user">Main</a>
   </div>
   <div class = "container">
-    <div id = "welcomeBanner" ng-show="!home.user">
+    <div id = "welcomeBanner" ng-hide="home.user">
       <p> Welcome to EatOut!</p>
       <p>Register or log in to continue</p>
     </div>

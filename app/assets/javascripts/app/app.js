@@ -6,7 +6,7 @@ angular
         url: '/',
         templateUrl:'app/views/home.html',
         controller:'HomeController as home',
-        onEnter: ['$state', 'Auth', function($state, Auth) { //too slow, loads template before switch, check $cookies
+        onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
             $state.go('.main');
           });
@@ -36,26 +36,33 @@ angular
         url:'main',
         templateUrl:'app/views/events/main.html',
         controller: 'EventController as event',
-        resolve:{
-          authenticate: authenticate
-        }
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function (){
+          }, function(error){
+            $state.go('^home');
+          });
+        }]
       }) 
       .state('home.newEvent',{
         url:'newevent',
         templateUrl:'app/views/events/event.html',
         controller: 'EventController as event',
-        resolve:{
-          authenticate: authenticate
-        }
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function (){
+          }, function(error){
+            $state.go('^home');
+          });
+        }]
       })
       .state('home.events',{
         url:'events',
         templateUrl:'app/views/events/index.html',
         controller: 'EventIndexController as events',
-        onEnter:['$cookies', function($cookies){
-          if(JSON.parse($cookies.get('user')).id === undefined){
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function (){
+          }, function(error){
             $state.go('^home');
-          }
+          });
         }],
         resolve:{
           userEvents:['EventService','$cookies', function (EventService, $cookies){
@@ -74,21 +81,7 @@ angular
       //    authenticate: authenticate
       //  }
       //}); //end of states
-      
-      //Authenticate method to prevent template load with unauthorized access
-      //Idea is to use $q's promise control to control redirects
-      //by adding this to a state's resolve, I can perform a redirect if auth fails
      
-      function authenticate($q, $state, $timeout, $cookies) {
-        if($cookies.get('user') !== undefined){
-          return $q.when();
-        }
-        else{
-          $timeout(function(){
-            $state.go('home');
-          });
-          $q.reject;
-        }        
-      }      
+        
       $urlRouterProvider.otherwise('/');
   });
