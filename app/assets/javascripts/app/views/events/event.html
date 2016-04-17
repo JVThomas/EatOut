@@ -20,8 +20,8 @@
     <ul ng-show="(event.filteredList.length === 0)"><li>No venues found</li></ul>
     <div ng-show = "(event.filteredList.length > 0)" class = "venueList">
       <ul class = "results">
-        <li ng-repeat = "venue in event.filteredList track by venue.id" class = "venueItem">
-          <div>
+        <li ng-repeat = "venue in event.filteredList track by venue.id" >
+          <div class = "venueItem">
             <div>{{venue.name}}</div>
               <ul>
                 <li ng-repeat = "addressLine in venue.location.formattedAddress">{{addressLine}}</li>
@@ -35,36 +35,4 @@
     </div>
   </div>
 </div>
-
-
-<div id = "eventFormPanel" ng-show = "event.activePanel">
-  <div id = "venueDetails">
-    <h3>Event</h3>
-    <div>{{event.userEvent.venue.name}}</div>
-    <div class = "angular-with-newlines">{{event.userEvent.venue.location}}</div>
-    <div>Phone: {{event.userEvent.venue.contact}}</div>
-  </div><br>
-  <form name = "eventDetails">
-    <div = "form-group">
-      <div ng-if = "eventDetails.name.$touched" ng-show = "eventDetails.name.$error.required">Please insert a name</div>
-      <label>Event Name: </label> <input name = "name" type = "text" required = "required" ng-model = "event.userEvent.name"/>
-    </div><br>
-    <div = "form-group">
-      <div ng-if = "eventDetails.date.$touched" ng-show = "eventDetails.date.$error.required">Please insert a date</div>
-      <label>Date: </label> <input name = "date" type = "text" required = "required" ng-model = "event.userEvent.date"/>
-    </div><br>
-    <div = "form-group">
-      <div ng-if = "eventDetails.time.$touched" ng-show = "eventDetails.time.$error.required">Please insert a time</div>
-      <label>Time: </label> <input name = "time" type = "text" required = "required" ng-model = "event.userEvent.time"/>
-    </div><br>
-    <div = "form-group">
-      <div ng-if = "eventDetails.guests.$touched" ng-show = "eventDetails.guests.$error.required">Please insert number of guests</div>
-      <label>Number of guests: </label> <input name = "guests" type = "number" required = "required" ng-model = "event.userEvent.guests"/>
-    </div><br>
-    <div = "form-group">
-      <label>Notes: </label> <input name = "time" type = "textfield" cols = "80" rows = "20" ng-model = "event.userEvent.note.content"/><br>
-    </div><br>
-    <button class = "btn" ng-click = "event.submitEvent()">Submit Event</button>
-    <button class = "btn" ng-click = "event.resetVenue()">Change Venue</button>
-  </form>
-</div>
+<ng-include src="'app/views/events/newEvent.html'"></ng-include>

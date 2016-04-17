@@ -33,13 +33,12 @@ function EventController($filter,FoursquareService,$cookies, $state, $stateParam
     ctrl.activePanel = !ctrl.activePanel;
   }
 
-  ctrl.submitEvent = function(){ //couldn't get accepts_nested_arguments_for to work with angular data submission, had to resort to this
+  ctrl.createEvent = function(){ //couldn't get accepts_nested_arguments_for to work with angular data submission, had to resort to this
     ctrl.userEvent.user_id = JSON.parse($cookies.get('user')).id;
     VenueService.createVenue(ctrl.userEvent.venue).then(function(venueResp){
       ctrl.userEvent.venue_id = venueResp.venue.id;
       EventService.createEvent(ctrl.userEvent).then(function(eventResp){
         NoteService.createNote(ctrl.userEvent.note, eventResp.event.id).then(function(noteResp){
-          debugger;
         });
       });
       $state.go('home.events');

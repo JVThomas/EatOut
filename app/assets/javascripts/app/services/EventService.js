@@ -16,8 +16,16 @@ function EventService($resource){
   }
 
   this.getEvents = function(id){
-    return userEvents.get({user_id:id},function(resp){
-      return resp;
+    return userEvents.get({user_id:id},function(){});
+  }
+
+  this.getEvent = function (eventId,user_id,callback) {
+    Event.get({eventId: eventId, user_id: user_id}, callback);
+  };
+
+  this.deleteEvent = function(eventId, userId){
+    Event.get({eventId:eventId, user_id:userId}, function(event){
+      event.$delete({eventId:eventId, user_id: userId});
     });
   }
 }

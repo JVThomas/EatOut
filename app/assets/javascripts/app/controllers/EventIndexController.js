@@ -1,6 +1,10 @@
 function EventIndexController(userEvents){
   var ctrl = this;
   ctrl.userEvents = userEvents;
+
+  ctrl.test = function(){
+    debugger;
+  }
 }
 
 angular

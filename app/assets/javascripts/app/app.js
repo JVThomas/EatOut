@@ -69,18 +69,18 @@ angular
             return EventService.getEvents(JSON.parse($cookies.get('user')).id);
           }]
         }
-      }); 
-      //.state('home.eventShow',{
-      //  url:'eventShow',
-      //  templateUrl:'app/views/events/show.html',
-      //  controller: 'EventController as event',
-      //  params:{
-      //    obj: null;
-      //  }
-      //  resolve:{
-      //    authenticate: authenticate
-      //  }
-      //}); //end of states
+      }) 
+      .state('home.showEvent',{
+        url:'events/:index',
+        templateUrl:'app/views/events/show.html',
+        controller: 'EventShowController as eventShow',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function (){
+          }, function(error){
+            $state.go('^home');
+          });
+        }]
+      }); //end of states
      
         
       $urlRouterProvider.otherwise('/');

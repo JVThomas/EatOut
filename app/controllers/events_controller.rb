@@ -12,8 +12,13 @@ class EventsController < ApplicationController
   end
 
   def show
-    binding.pry
-    @event = Event.find_by(id:params[:event_id], user_id: params[:user_id])
+    @event = Event.find_by(id:params[:id], user_id: params[:user_id])
+    render json: @event
+  end
+
+  def destroy
+    @event = Event.find_by(id: params[:id], user_id: params[:user_id]);
+    @event.delete
     render json: @event
   end
 

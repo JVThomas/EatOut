@@ -1,6 +1,10 @@
 Events Index
 <div id = "eventListing">
   <ul>
-    <li ng-repeat = "event in events.userEvents.events">{{event.name}}</li>
+    <li ng-repeat = "event in events.userEvents.events">
+      <div class = "eventItem">
+        <a href="" ui-sref = "home.showEvent({index:event.id})">{{event.name}}</a>
+      </div>
+    </li>
   </ul>
 </div>

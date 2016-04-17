@@ -1,2 +1,12 @@
-<div>
+<div id = "showEventDetails">
+  <div>Name: {{eventShow.event.name}}</div>
+  <div>Date: {{eventShow.event.date}}</div>
+  <div>Time: {{eventShow.event.time}}</div>
+  <div>Guests: {{eventShow.event.guests}}</div><br>
+  <div>{{eventShow.event.venue.name}}</div>
+  <div class = "angular-with-newlines">{{eventShow.event.venue.location}}</div>
+  <div>Phone: {{eventShow.event.venue.contact}}</div><br>
+  <div>Notes: {{eventShow.event.note.content}}</div><br>
+  <a class = "btn" href="" ng-click = "eventShow.deleteEvent()">Delete Event</a>
+  <a class = "btn" href="home.editEvent({eventShow.event.id})">Edit Event</a>
 </div>
