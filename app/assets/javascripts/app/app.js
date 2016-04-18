@@ -45,7 +45,7 @@ angular
       }) 
       .state('home.newEvent',{
         url:'newevent',
-        templateUrl:'app/views/events/event.html',
+        templateUrl:'app/views/events/newEvent.html',
         controller: 'EventController as event',
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
@@ -74,6 +74,17 @@ angular
         url:'events/:index',
         templateUrl:'app/views/events/show.html',
         controller: 'EventShowController as eventShow',
+        onEnter: ['$state', 'Auth', function($state, Auth) {
+          Auth.currentUser().then(function (){
+          }, function(error){
+            $state.go('^home');
+          });
+        }]
+      })
+      .state('home.editEvent',{
+        url:'events/:index/edit',
+        templateUrl:'app/views/events/editEvent.html',
+        controller: 'EventController as event',
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){

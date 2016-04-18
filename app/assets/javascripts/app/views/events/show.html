@@ -8,5 +8,5 @@
   <div>Phone: {{eventShow.event.venue.contact}}</div><br>
   <div>Notes: {{eventShow.event.note.content}}</div><br>
   <a class = "btn" href="" ng-click = "eventShow.deleteEvent()">Delete Event</a>
-  <a class = "btn" href="home.editEvent({eventShow.event.id})">Edit Event</a>
+  <a class = "btn" href="" ui-sref = "home.editEvent({index:eventShow.event.id})">Edit Event</a>
 </div>

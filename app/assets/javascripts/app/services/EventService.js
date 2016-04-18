@@ -1,6 +1,8 @@
 function EventService($resource){
 
-  var Event = $resource('http://localhost:3000/events/:eventId');
+  var Event = $resource('http://localhost:3000/events/:eventId',{eventId:'@eventId'},{
+    'update': {method: "PUT"}
+  });
 
   var userEvents = $resource('http://localhost:3000/events');
 
@@ -26,6 +28,18 @@ function EventService($resource){
   this.deleteEvent = function(eventId, userId){
     Event.get({eventId:eventId, user_id:userId}, function(event){
       event.$delete({eventId:eventId, user_id: userId});
+    });
+  }
+
+  this.updateEvent = function(userId, eventObj){
+    Event.get({eventId: eventObj.id, user_id: userId}, function(resp){
+      resp.eventId = eventObj.id,
+      resp.user_id = userId,
+      resp.event.date = eventObj.date,
+      resp.event.time = eventObj.time,
+      resp.event.name = eventObj.name,
+      resp.event.guests = eventObj.guests
+      resp.$update();
     });
   }
 }

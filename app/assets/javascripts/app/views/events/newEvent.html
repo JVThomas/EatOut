@@ -1,10 +1,13 @@
+<div id = "venueSearch" ng-show="!(event.activePanel)" venue-search></div>
+<div id = "resultWrapper" ng-show="!(event.activePanel)" venue-list></div>
+
 <div id = "eventFormPanel" ng-show = "event.activePanel">
   
   <ng-include src ="'app/views/events/_venueDetails.html'"></ng-include>
   
   <form name = "eventDetails">
     <ng-include src="'app/views/events/_form.html'"></ng-include>
-    <button ng-click = "event.createEvent()" ng-disabled = "!eventDetails.$valid" ng-show = "event.activePanel">Submit Event</button>
+    <button ng-click = "event.createEvent()" ng-disabled = "!eventDetails.$valid" ng-show = "event.activePanel">Create Event</button>
   </form>
 
 </div>

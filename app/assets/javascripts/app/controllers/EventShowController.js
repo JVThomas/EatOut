@@ -8,7 +8,7 @@ function EventShowController($state,$stateParams,$cookies,EventService,$timeout)
     EventService.deleteEvent(ctrl.event.id, JSON.parse($cookies.get('user')).id);
     $timeout(function(){
       $state.go('^.events');
-    }, 100);
+    }, 50);
   }
 }
 

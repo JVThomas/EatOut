@@ -3,14 +3,12 @@ function HomeController($scope,$state,Auth,$cookies){
   ctrl.user;
 
   ctrl.logout = function(){
-    //debugger;
     Auth.logout().then(function(resp){
-      //debugger;
       $cookies.remove('user');
       ctrl.user = undefined;
       $state.go('home');
     },function(error){
-      //debugger;
+      alert('Oops, something went wrong with logout');
     });
   }
 
