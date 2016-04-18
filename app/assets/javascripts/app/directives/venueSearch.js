@@ -1,5 +1,6 @@
 function venueSearch(FoursquareService, $rootScope){
   return{
+    scope:{},
     controllerAs: 'venueSearchCtrl',
     templateUrl: 'app/views/events/directives/venueSearch.html',
     controller: function(FoursquareService,$rootScope){

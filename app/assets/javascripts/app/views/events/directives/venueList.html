@@ -1,3 +1,4 @@
+<div ng-show = "(!venueList.resultsFoundBool)">No matches found</div>
 <div id = "venueSearchResults" ng-show="(venueList.searchResults.length > 0)"> 
   <label>Filter Search Results: </label> <input type = "text" ng-model = "venueList.searchTerm" ng-change = "venueList.refilter()"/><br>
   <ul ng-show="(venueList.filteredList.length === 0)"><li>No venues found</li></ul>
