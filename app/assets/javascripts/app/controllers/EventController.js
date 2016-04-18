@@ -1,28 +1,8 @@
-function EventController($filter,FoursquareService,$cookies, $state, $stateParams, EventService, VenueService, NoteService){
+function EventController($filter,$cookies, $state, $stateParams, EventService, VenueService, NoteService,$rootScope,$scope){
   var ctrl = this;
   ctrl.activePanel = false;
   ctrl.userEvent = {};
   ctrl.searchTerm = '';
-
-  ctrl.findVenues = function(){
-    FoursquareService.getVenues(ctrl.params).then(function(resp){
-      ctrl.searchResults = resp['data']['response']['venues'];
-      ctrl.filteredList = ctrl.searchResults;
-    });
-  }
-
-  ctrl.refilter = function () {
-    ctrl.filteredList = $filter('filter')(ctrl.searchResults, ctrl.searchTerm);
-  };
-
-  ctrl.selectVenue = function(venue){
-    ctrl.userEvent.venue = {
-      name: venue.name,
-      location: venue.location.formattedAddress.join('\n'),
-      contact: venue.contact.formattedPhone,
-    };
-    ctrl.panelActivate();
-  }
 
   ctrl.resetVenue = function(){
     ctrl.userEvent.venue = {};
@@ -44,6 +24,16 @@ function EventController($filter,FoursquareService,$cookies, $state, $stateParam
       $state.go('home.events');
     });
   }
+
+  $rootScope.$on('selectVenue', function(event,venue){
+    ctrl.userEvent.venue = {
+      name: venue.name,
+      location: venue.location.formattedAddress.join('\n'),
+      contact: venue.contact.formattedPhone,
+    };
+    ctrl.panelActivate();
+  });
+  
 }
 
 angular

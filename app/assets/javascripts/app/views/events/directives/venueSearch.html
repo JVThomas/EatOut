@@ -1,0 +1,12 @@
+<p>Search for Venues here!</p>
+<form name = "venueSearchForm">  
+  <div class = "form-group">
+    <div ng-if = "venueSearchForm.city.$touched" ng-show = "venueSearchForm.city.$error.required"> Venue is required</div>
+    <label>City: </label><input name = "city" type="text" required = "required" ng-model = "venueSearchCtrl.params.near"/><br>
+  </div>
+  <div class = "form-group">
+    <div ng-if = "venueSearchForm.query.$touched" ng-show = "venueSearchForm.query.$error.required">Query is required</div>
+    <label>Venue Type: </label><input name = "query" type = "text" required = "required" ng-model = "venueSearchCtrl.params.query" /><br>
+  </div>
+  <button type = "submit" ng-click = "venueSearchCtrl.findVenues()" ng-disabled = "!venueSearchForm.$valid">Submit</button>
+</form><br>

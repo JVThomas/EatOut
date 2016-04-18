@@ -1,0 +1,9 @@
+<div id = "venueSearchResults" ng-show="(venueList.searchResults.length > 0)"> 
+  <label>Filter Search Results: </label> <input type = "text" ng-model = "venueList.searchTerm" ng-change = "venueList.refilter()"/><br>
+  <ul ng-show="(venueList.filteredList.length === 0)"><li>No venues found</li></ul>
+  <div ng-show = "(venueList.filteredList.length > 0)" class = "venueList">
+    <ul class = "results">
+      <li ng-repeat = "venue in venueList.filteredList track by venue.id"  venue-item="venue"></li>
+    </ul>
+  </div>
+</div>

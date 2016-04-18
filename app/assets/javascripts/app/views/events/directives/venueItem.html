@@ -1,0 +1,10 @@
+<!-- template for directive-->
+<div class = "venueItem">
+  <div>{{venueCtrl.venue.name}}</div>
+    <ul>
+      <li ng-repeat = "addressLine in venueCtrl.venue.location.formattedAddress">{{addressLine}}</li>
+    </ul>
+  <div>Phone: {{venueCtrl.venue.contact.formattedPhone}}</div>
+  <div># of Foursquare users that visited: {{venueCtrl.venue.stats.usersCount}}</div>
+  <button class = "btn" ng-click = "venueCtrl.selectVenue()">Select Venue</button>
+</div><br>
