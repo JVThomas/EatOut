@@ -7,7 +7,7 @@ function AuthController($scope,$state,Auth){
     Auth.login(credentials).then(function(){
       $state.go('^.main');
     }, function(error){
-      alert(error.statusText);
+      alert("Access: " + error.statusText);
     });
   };
 

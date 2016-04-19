@@ -1,15 +1,21 @@
-<div class = "navbar row">
-  <div class = "one-third navbar-logo column">EatOut</div>
-  <div class = "navbar-links two-thirds column">
-    <a href="" ui-sref = "home.login" ng-show="home.user === undefined">Login</a>
-    <a href="" ui-sref = "home.register" ng-show="home.user === undefined">Register</a>
-    <a href="" ng-click = "home.logout()" ng-show = "home.user !== undefined">Logout</a>
-    <a href="" ui-sref = "home.main" ng-show="home.user">Main</a>
+<div class = "wrapper">
+  <div class = "navbar row">
+    <div class = "one-third navbar-logo column">EatOut</div>
+    <div class = "navbar-links two-thirds column">
+      <a href="" ui-sref = "home.login" ng-show="home.user === undefined">Login</a>
+      <a href="" ui-sref = "home.register" ng-show="home.user === undefined">Register</a>
+      <a href="" ng-click = "home.logout()" ng-show = "home.user !== undefined">Logout</a>
+      <a href="" ui-sref = "home.main" ng-show="home.user">Main</a>
+    </div>
   </div>
   <div class = "container">
     <div id = "welcomeBanner" ng-hide="home.user">
-      <p> Welcome to EatOut!</p>
-      <p>Register or log in to continue</p>
+      <p class = "welcome"> Welcome to EatOut!</p>
+      <div class = "description">
+        <span>EatOut is a simple event planner for special occasions or to just hanging out with friends.</span><br>
+         <span>Using the Foursquare API,you can look up venues near your location and pick the right spot for you.</span><br>
+         <span><a href ="" ui-sref="home.register">Register now</a> or <a href="" ui-sref="home.login">log in</a> to continue!</span>
+       </div>
     </div>
     <div ui-view></div>
   </div>

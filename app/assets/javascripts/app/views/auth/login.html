@@ -1,7 +1,7 @@
 <form name = "loginForm">
   
   <div class = "form-group">
-    <div ng-if= "loginForm.email.$touched" ng-messages = "loginForm.email.$error">
+    <div ng-if= "loginForm.email.$touched" ng-messages = "loginForm.email.$error" class = "error">
       <div ng-message = "email"> Not a valid email</div>
       <div ng-message = "required">Email is required</div>
     </div>
@@ -16,8 +16,8 @@
 
   
   <div class = "form-group">
-    <div ng-if="loginForm.password.$touched" ng-messages = "loginForm.password.$error">
-      <div ng-message = "required">Password is required</div>
+    <div ng-if="loginForm.password.$touched" ng-messages = "loginForm.password.$error" class = "error">
+      <div ng-message = "required" class = "error">Password is required</div>
       <div ng-message = "minlength">Password must be 8 characters long</div>
     </div>
     Password:<input

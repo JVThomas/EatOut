@@ -15,6 +15,9 @@
  */
 
  /*///////////////////LAYOUT////////////////////////////*/
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Bitter:400,700);
+
 html {
   box-sizing: border-box;
 }
@@ -25,12 +28,14 @@ html {
 
 body{
   margin:0;
+  background-color: rgb(235, 235, 242);
 }
 
 .container {
-  margin: 50px auto 0px auto;
-  padding: 3% 5%;
+  margin: 0 auto;
+  padding: 1em 3em;
   max-width: 1000px;
+  background-color: white; 
 }
 
 .row::before,
@@ -38,11 +43,6 @@ body{
   display: table;
   content: " ";
   clear: both;
-}
-
-.navbar{
-  height: 50px;
-  background-color: rgb(197, 197, 197);
 }
 
 .one,
@@ -54,32 +54,22 @@ body{
 }
 
 /*///////////////////STYLING////////////////////////////*/
+#alert, #error_explanation{
+  float:none;
+  border:none;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 1% 1%; 
+  text-align: center;
+  background-color: rgb(238, 214, 214);
+}
+
 .angular-with-newlines {
   white-space: pre-line;
-}
-.navbar{
-  position:fixed;
-  width:100%;
-}
-.navbar a{
-  text-decoration: none;
-  color: black;
-}
-
-.navbar-logo{
-  font-size: 2em;
-  margin-top: 5px;
-  padding-left: 1.5%;
-}
-
-.navbar-links{
-  margin-top: 10px;
-  text-align: right;
-  font-size: 1.2em;
-}
-
-.navbar-links a{
-  margin-right: 2%;
 }
 
 .btn{
@@ -95,19 +85,74 @@ body{
   border-radius: 2px  ;
 }
 
-#alert, #error_explanation{
-  float:none;
-  border:none;
-  border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  padding: 1% 1%; 
+.description{
+  font-family: 'Bitter', serif;
+  font-size: 1.2em;
   text-align: center;
-  background-color: rgb(238, 214, 214);
+  margin-bottom: 1em;
 }
+
+.description a{
+  color: blue;
+}
+
+.error{
+  color: red;
+}
+
+.event-link{
+  margin: 0.5em;
+  width: 100%;
+}
+
+.form-group{
+  font-size: 1.2em;
+  margin: 0.5em auto;
+}
+
+.image{
+  height: 16em;
+  width: 100%;
+  background: url("set-table-free-license-cc0.jpg") no-repeat center center fixed; 
+  background-size: contain;
+}
+
+input[type="text"] {
+  font-size:12px;
+}
+
+.navbar{
+  height: 55px;
+  background-color: rgb(30,61,231);
+  position:fixed;
+  width:100%;
+  top: 0;
+}
+.navbar a{
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-links{
+  margin-top: 10px;
+  text-align: right;
+}
+
+.navbar-links a{
+  margin-right: 2%;
+  color: white;
+  font-size: 1.4em;
+  font-family: "Bitter", serif;
+}
+
+.navbar-logo{
+  font-size: 1.6em;
+  margin-top: 5px;
+  padding-left: 1.5%;
+  font-family: 'Pacifico', cursive;
+  color: white;
+}
+
 
 #notice{
   float:none;
@@ -123,12 +168,52 @@ body{
   background-color: rgb(216, 238, 204); 
 }
 
+.overlay{
+  height:100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.overlay:hover{
+  opacity: 0.65;
+  background: black;
+  transition: opacity .5s;
+}
+
+.overlay a{
+  display:block;
+  color: #fff;
+  line-height: 150px;
+  font-family: 'Bitter', serif;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.venueList{ 
+  overflow-y:scroll; 
+  position:relative;
+  height: 500px;
+}
+
+.welcome{
+  font-family: 'Bitter', serif;
+  font-size: 3.5em;
+  text-align: center;
+  color: rgb(30,61,231);
+}
+
+.wrapper{
+  padding-top: 70px;
+}
+
 .field_with_errors input, .field_with_errors textarea{
   background-color: rgb(238, 214, 214);
 }
 
 form{
-  margin:0;
+  margin:0 auto;
   width:50%;
   text-align: left;
 }
@@ -146,11 +231,7 @@ li{
   text-align: left;  
 }
 
-.venueList{ 
-    overflow-y:scroll; 
-    position:relative;
-    height: 500px;
-}
+
 
 
 /*///////////////////BREAKPOINTS////////////////////////////*/
