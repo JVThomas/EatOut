@@ -65,8 +65,8 @@ angular
           });
         }],
         resolve:{
-          userEvents:['EventService','$cookies', function (EventService, $cookies){
-            return EventService.query({user_id: JSON.parse($cookies.get('user')).id});
+          userEvents:['EventFactory','$cookies', function (EventFactory, $cookies){
+            return EventFactory.query({user_id: JSON.parse($cookies.get('user')).id});
           }]
         }
       }) 

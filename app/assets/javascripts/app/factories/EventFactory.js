@@ -1,4 +1,4 @@
-function EventService($resource){
+function EventFactory($resource){
 
   var Event = $resource('http://localhost:3000/events/:id',{id:'@id'},{
     'update': {method: "PUT"}
@@ -9,4 +9,4 @@ function EventService($resource){
 
 angular
   .module('app')
-  .factory('EventService', EventService);
+  .factory('EventFactory', EventFactory);

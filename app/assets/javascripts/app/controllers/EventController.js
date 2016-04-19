@@ -1,4 +1,4 @@
-function EventController($filter,$cookies, $state, $stateParams, EventService, VenueService, NoteService,$rootScope, $timeout){
+function EventController($filter,$cookies, $state, $stateParams, EventFactory, VenueFactory, NoteFactory,$rootScope, $timeout){
   
   var ctrl = this;
   ctrl.user_id = JSON.parse($cookies.get('user')).id;
@@ -6,15 +6,15 @@ function EventController($filter,$cookies, $state, $stateParams, EventService, V
 
   if($stateParams.index === undefined){
     ctrl.activePanel = false;
-    ctrl.userEvent = new EventService();
-    ctrl.venue = new VenueService();
-    ctrl.note = new NoteService();
+    ctrl.userEvent = new EventFactory();
+    ctrl.venue = new VenueFactory();
+    ctrl.note = new NoteFactory();
   }
   else{
     ctrl.activePanel = true;
-    ctrl.userEvent = EventService.get({id:$stateParams.index, user_id: ctrl.user_id}, function(userEvent){
-      ctrl.venue = VenueService.get({id: ctrl.userEvent.venue.id}, function(venue){
-        ctrl.note = NoteService.get({id: ctrl.userEvent.note.id});
+    ctrl.userEvent = EventFactory.get({id:$stateParams.index, user_id: ctrl.user_id}, function(userEvent){
+      ctrl.venue = VenueFactory.get({id: ctrl.userEvent.venue.id}, function(venue){
+        ctrl.note = NoteFactory.get({id: ctrl.userEvent.note.id});
       });
     });
   }

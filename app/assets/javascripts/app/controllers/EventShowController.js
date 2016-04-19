@@ -1,8 +1,8 @@
-function EventShowController($state,$stateParams,$cookies,EventService,$timeout){
+function EventShowController($state,$stateParams,$cookies,EventFactory,$timeout){
 
   var ctrl = this;
   ctrl.userId = JSON.parse($cookies.get('user')).id;
-  ctrl.event = EventService.get({id: $stateParams.index, user_id: ctrl.userId});
+  ctrl.event = EventFactory.get({id: $stateParams.index, user_id: ctrl.userId});
 
   ctrl.deleteEvent = function(){
     ctrl.event.$delete({id: $stateParams.index, user_id: ctrl.userId});
