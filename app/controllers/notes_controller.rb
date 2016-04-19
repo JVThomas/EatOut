@@ -1,4 +1,3 @@
-require 'pry'
 class NotesController < ApplicationController
 
   before_action :set_note, only:[:show,:update]

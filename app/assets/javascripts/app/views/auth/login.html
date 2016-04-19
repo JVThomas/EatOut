@@ -11,7 +11,7 @@
             required="required"
             ng-model = "user.email"
             placeholder = "Email Address"
-          />{{user.email}}
+          />
   </div>
 
   
@@ -26,7 +26,7 @@
               required = "required"
               ng-model = "user.password"
               minlength = "8"
-             />{{user.password}}
+             />
   </div>
   
   <button type = "submit" ng-click = "login(user)" ng-disabled = "!loginForm.$valid">Submit</input>

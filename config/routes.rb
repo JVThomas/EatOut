@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :events, only:[:create, :show, :destroy, :update, :index]
-  resources :venues, only:[:create, :update]
+  resources :venues, only:[:create, :show, :update]
   resources :notes, only:[:create, :update, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.

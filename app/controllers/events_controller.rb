@@ -1,4 +1,3 @@
-require 'pry'
 class EventsController < ApplicationController
   
   before_action :set_user, only:[:index,:show]
@@ -6,7 +5,7 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.where(user_id: params[:user_id])
-    render json: @events
+    render json: @events, each_serializer: SimpleEventSerializer
   end
   
   def create

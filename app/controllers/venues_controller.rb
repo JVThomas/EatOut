@@ -1,9 +1,18 @@
-require 'pry'
 class VenuesController < ApplicationController
 before_action :set_user
   
   def create
-    @venue = Venue.find_or_create_by(name: venue_params[:name], location: venue_params[:location], contact: venue_params[:contact])
+    @venue = Venue.create(venue_params)
+    render json: @venue
+  end
+
+  def show
+    @venue = Venue.find(params[:id])
+    render json: @venue
+  end
+
+  def update
+    @venue = Venue.find_or_create_by(venue_params)
     render json: @venue
   end
 

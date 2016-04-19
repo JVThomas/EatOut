@@ -66,7 +66,7 @@ angular
         }],
         resolve:{
           userEvents:['EventService','$cookies', function (EventService, $cookies){
-            return EventService.getEvents(JSON.parse($cookies.get('user')).id);
+            return EventService.query({user_id: JSON.parse($cookies.get('user')).id});
           }]
         }
       }) 

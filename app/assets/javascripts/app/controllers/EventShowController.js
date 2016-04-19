@@ -1,14 +1,14 @@
 function EventShowController($state,$stateParams,$cookies,EventService,$timeout){
+
   var ctrl = this;
-  EventService.getEvent($stateParams.index, JSON.parse($cookies.get('user')).id, function (event) {
-    ctrl.event = event.event;
-  });
+  ctrl.userId = JSON.parse($cookies.get('user')).id;
+  ctrl.event = EventService.get({id: $stateParams.index, user_id: ctrl.userId});
 
   ctrl.deleteEvent = function(){
-    EventService.deleteEvent(ctrl.event.id, JSON.parse($cookies.get('user')).id);
+    ctrl.event.$delete({id: $stateParams.index, user_id: ctrl.userId});
     $timeout(function(){
-      $state.go('^.events');
-    }, 50);
+      $state.go('home.events');
+    }, 50); 
   }
 }
 

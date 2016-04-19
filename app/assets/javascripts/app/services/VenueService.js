@@ -1,16 +1,8 @@
 function VenueService($resource){
-  var Venue = $resource('http://localhost:3000/venues');
-
-  this.createVenue = function(venueObj){
-    venue = new Venue;
-    venue.name = venueObj.name;
-    venue.location = venueObj.location;
-    venue.contact = venueObj.contact;
-    return venue.$save();
-  }
-
+  var Venue = $resource('http://localhost:3000/venues/:id', {id:'@id'},{'update':{method:'PUT'}});
+  return Venue;
 }
 
 angular
   .module('app')
-  .service('VenueService', VenueService);
+  .factory('VenueService', VenueService);
