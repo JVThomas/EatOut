@@ -110,11 +110,25 @@ body{
   margin: 0.5em auto;
 }
 
-.image{
+.new-event-image{
+  background: url("set-table-free-license-cc0.jpg"); 
+}
+
+.view-events-image{
+  background: url("HFH6U1U5T4.jpg");  
+}
+
+.new-event-image, .view-events-image{
   height: 16em;
   width: 100%;
-  background: url("set-table-free-license-cc0.jpg") no-repeat center center fixed; 
-  background-size: contain;
+  background-size: 100% 100%
+}
+
+.new-event-image img, .view-events-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 input[type="text"] {
@@ -216,6 +230,9 @@ form{
   margin:0 auto;
   width:50%;
   text-align: left;
+  border: 1px solid #999;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 h1{
