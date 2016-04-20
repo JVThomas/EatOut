@@ -1,3 +1,3 @@
 class SimpleEventSerializer < ActiveModel::Serializer
-  attributes :id, :name 
+  attributes :id, :name, :date, :time
 end

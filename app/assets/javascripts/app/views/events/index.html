@@ -1,9 +1,12 @@
-Events Index
+<h1>Events Index</h1>
 <div id = "eventListing">
   <ul>
-    <li ng-repeat = "event in events.userEvents">
+    <li ng-repeat = "event in events.userEvents" ng-class-even = "'even'" ng-class-odd = "'odd'">
       <div class = "eventItem">
-        <a href="" ui-sref = "home.showEvent({index:event.id})">{{event.name}}</a>
+        <a href="" ui-sref = "home.showEvent({index:event.id})">{{event.name}}</a><br>
+        <ul class = "eventDetailsTime">
+          <li><label>Date:</label> {{event.date}} | <label>Time:</label> {{event.time}}</li>
+        </ul>
       </div>
     </li>
   </ul>

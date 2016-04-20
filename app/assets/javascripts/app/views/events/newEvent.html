@@ -7,7 +7,7 @@
   
   <form name = "eventDetails" id = "eventDetails">
     <ng-include src="'app/views/events/_form.html'"></ng-include>
-    <button ng-click = "event.createEvent()" ng-disabled = "!eventDetails.$valid" ng-show = "event.activePanel">Create Event</button>
+    <button class = "btn" ng-click = "event.createEvent()" ng-disabled = "!eventDetails.$valid" ng-show = "event.activePanel">Create Event</button>
   </form>
 
 </div>

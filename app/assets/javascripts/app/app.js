@@ -3,7 +3,7 @@ angular
   .config(function($stateProvider,$urlRouterProvider){
     $stateProvider
       .state('home',{
-        url: '/',
+        url: '',
         templateUrl:'app/views/home.html',
         controller:'HomeController as home',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -13,7 +13,7 @@ angular
         }]
       })
       .state('home.register',{
-        url: 'register',
+        url: '/register',
         templateUrl: 'app/views/auth/register.html',
         controller:'AuthController as auth',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -23,7 +23,7 @@ angular
         }]
       })
       .state('home.login',{
-        url: 'login',
+        url: '/login',
         templateUrl: 'app/views/auth/login.html',
         controller:'AuthController as auth',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -33,7 +33,7 @@ angular
         }]
       })
       .state('home.main',{
-        url:'main',
+        url:'/main',
         templateUrl:'app/views/events/main.html',
         controller: 'EventController as event',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -44,7 +44,7 @@ angular
         }]
       }) 
       .state('home.newEvent',{
-        url:'newevent',
+        url:'/newevent',
         templateUrl:'app/views/events/newEvent.html',
         controller: 'EventController as event',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -55,7 +55,7 @@ angular
         }]
       })
       .state('home.events',{
-        url:'events',
+        url:'/events',
         templateUrl:'app/views/events/index.html',
         controller: 'EventIndexController as events',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -71,7 +71,7 @@ angular
         }
       }) 
       .state('home.showEvent',{
-        url:'events/:index',
+        url:'/events/:index',
         templateUrl:'app/views/events/show.html',
         controller: 'EventShowController as eventShow',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -82,7 +82,7 @@ angular
         }]
       })
       .state('home.editEvent',{
-        url:'events/:index/edit',
+        url:'/events/:index/edit',
         templateUrl:'app/views/events/editEvent.html',
         controller: 'EventController as event',
         onEnter: ['$state', 'Auth', function($state, Auth) {
@@ -91,8 +91,7 @@ angular
             $state.go('^');
           });
         }]
-      }); //end of states
-     
+      }); //end of states     
         
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('');
   });
