@@ -4,7 +4,11 @@
   <ul ng-show="(venueList.filteredList.length === 0)"><li>No venues found</li></ul>
   <div ng-show = "(venueList.filteredList.length > 0)" class = "venueList">
     <ul class = "results">
-      <li ng-repeat = "venue in venueList.filteredList track by venue.id"  venue-item="venue"></li>
+      <li ng-repeat = "venue in venueList.filteredList track by venue.id"  
+        venue-item="venue" 
+        ng-class-even = "'even'"
+        ng-class-odd = "'odd'">
+      </li>
     </ul>
   </div>
 </div>

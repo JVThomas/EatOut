@@ -39,7 +39,7 @@ angular
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){
-            $state.go('^home');
+            $state.go('^');
           });
         }]
       }) 
@@ -50,7 +50,7 @@ angular
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){
-            $state.go('^home');
+            $state.go('^');
           });
         }]
       })
@@ -61,7 +61,7 @@ angular
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){
-            $state.go('^home');
+            $state.go('^');
           });
         }],
         resolve:{
@@ -77,7 +77,7 @@ angular
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){
-            $state.go('^home');
+            $state.go('^');
           });
         }]
       })
@@ -88,7 +88,7 @@ angular
         onEnter: ['$state', 'Auth', function($state, Auth) {
           Auth.currentUser().then(function (){
           }, function(error){
-            $state.go('^home');
+            $state.go('^');
           });
         }]
       }); //end of states

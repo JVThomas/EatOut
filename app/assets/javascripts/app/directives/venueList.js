@@ -15,9 +15,7 @@ function venueList($rootScope,$filter){
         ctrl.searchResults = results;
         ctrl.filteredList = ctrl.searchResults;
         
-        if (ctrl.searchResults === undefined || ctrl.searchResults.length === 0){
-          ctrl.resultsFoundBool = false;
-        }
+        (ctrl.searchResults === undefined || ctrl.searchResults.length === 0) ? ctrl.resultsFoundBool = false :  ctrl.resultsFoundBool = true; 
       });
     }
   }
