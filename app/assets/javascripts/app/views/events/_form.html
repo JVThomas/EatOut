@@ -1,20 +1,20 @@
 <div = "form-group">
-  <div ng-if = "eventDetails.name.$touched" ng-show = "eventDetails.name.$error.required">Please insert a name</div>
+  <div ng-if = "eventDetails.name.$touched" ng-show = "eventDetails.name.$error.required" class = "error">Please insert a name</div>
   <label>Event Name: </label> <input name = "name" type = "text" required = "required" ng-model = "event.userEvent.name"/>
 </div><br>
 
 <div = "form-group">
-  <div ng-if = "eventDetails.date.$touched" ng-show = "eventDetails.date.$error.required">Please insert a date</div>
+  <div ng-if = "eventDetails.date.$touched" ng-show = "eventDetails.date.$error.required" class = "error">Please insert a date</div>
   <label>Date: </label> <input name = "date" type = "text" required = "required" ng-model = "event.userEvent.date"/>
 </div><br>
 
 <div = "form-group">
-  <div ng-if = "eventDetails.time.$touched" ng-show = "eventDetails.time.$error.required">Please insert a time</div>
+  <div ng-if = "eventDetails.time.$touched" ng-show = "eventDetails.time.$error.required" class = "error">Please insert a time</div>
   <label>Time: </label> <input name = "time" type = "text" required = "required" ng-model = "event.userEvent.time"/>
 </div><br>
 
 <div = "form-group">
-  <div ng-if = "eventDetails.guests.$touched" ng-show = "eventDetails.guests.$error.required">Please insert number of guests</div>
+  <div ng-if = "eventDetails.guests.$touched" ng-show = "eventDetails.guests.$error.required" class = "error">Please insert number of guests</div>
   <label>Number of guests: </label> <input name = "guests" type = "number" required = "required" ng-model = "event.userEvent.guests"/>
 </div><br>
 
@@ -22,4 +22,4 @@
   <label>Notes: </label><br> <textarea name = "time" type = "textfield" cols = "100" rows = "14" ng-model = "event.note.content"/></textarea><br>
 </div><br>
 
-<button class = "btn" ng-click = "event.resetVenue()">Change Venue</button> 
+<button ng-click = "event.resetVenue()">Change Venue</button> 
