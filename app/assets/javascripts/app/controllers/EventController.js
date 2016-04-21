@@ -1,4 +1,4 @@
-function EventController($filter,$cookies, $state, $stateParams, EventFactory, VenueFactory, NoteFactory,$rootScope, $timeout){
+function EventController($filter,$cookies, $state, $stateParams, EventFactory, VenueFactory, NoteFactory,$rootScope){
   
   var ctrl = this;
   ctrl.user_id = JSON.parse($cookies.get('user')).id;
