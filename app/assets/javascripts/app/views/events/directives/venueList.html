@@ -1,10 +1,11 @@
 <div ng-show = "(!venueList.resultsFoundBool)">No matches found</div>
 <div id = "venueSearchResults" ng-show="(venueList.searchResults.length > 0)"> 
-  <label>Filter Search Results: </label> <input type = "text" ng-model = "venueList.searchTerm" ng-change = "venueList.refilter()"/><br>
+  <label>Filter Search Results: </label> <input type = "text" ng-model = "venueList.searchTerm" ng-change = "venueList.refilter()"/>
+  <a href="" ng-click="sort = 'stats.usersCount'; ctrl.reverse = !ctrl.reverse; ctrl.reverse === true ? expr = 'DESC' : expr = 'ASC'">| Order by: Visits: {{expr}} |</a><br>
   <ul ng-show="(venueList.filteredList.length === 0)"><li>No venues found</li></ul>
   <div ng-show = "(venueList.filteredList.length > 0)" class = "venueList">
     <ul class = "results">
-      <li ng-repeat = "venue in venueList.filteredList track by venue.id"  
+      <li ng-repeat = "venue in venueList.filteredList | orderBy:sort:ctrl.reverse track by venue.id"  
         venue-item="venue" 
         ng-class-even = "'even'"
         ng-class-odd = "'odd'">

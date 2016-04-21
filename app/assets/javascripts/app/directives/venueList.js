@@ -5,6 +5,7 @@ function venueList($rootScope,$filter){
     templateUrl:'app/views/events/directives/venueList.html',
     controller: function($rootScope,$filter){
       var ctrl = this;
+      ctrl.reverse = true;
       ctrl.resultsFoundBool = true;
       
       ctrl.refilter = function () {

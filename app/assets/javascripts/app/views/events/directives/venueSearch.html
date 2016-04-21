@@ -8,5 +8,5 @@
     <div ng-if = "venueSearchForm.query.$touched" ng-show = "venueSearchForm.query.$error.required" class = "error">Query is required</div>
     <label>Venue Query: </label><input name = "query" type = "text" required = "required" ng-model = "venueSearchCtrl.params.query" /><br>
   </div>
-  <button class = "btn" type = "submit" ng-click = "venueSearchCtrl.findVenues()" ng-disabled = "!venueSearchForm.$valid">Submit</button>
+  <button type = "submit" ng-click = "venueSearchCtrl.findVenues()" ng-disabled = "!venueSearchForm.$valid">Submit</button>
 </form><br>
