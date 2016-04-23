@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.delete
+    @event.destroy
     render json: @event
   end
 

@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
 
-  before_action :set_note, only:[:show,:update]
+  before_action :set_note, only:[:show,:update, :delete]
   
   def create
     @note = Note.create(note_params)
@@ -14,6 +14,11 @@ class NotesController < ApplicationController
 
   def show
     render json: @note
+  end
+
+  def destroy
+    binding.pry
+    Note.destroy(params[:id])
   end
 
   private
