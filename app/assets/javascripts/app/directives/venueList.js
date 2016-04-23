@@ -2,7 +2,7 @@ function venueList($rootScope,$filter){
   return{
     scope:{},
     controllerAs: 'venueList',
-    templateUrl:'app/views/events/directives/venueList.html',
+    templateUrl:'events/directives/venueList.html',
     controller: function($rootScope,$filter){
       var ctrl = this;
       ctrl.reverse = true;

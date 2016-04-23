@@ -3,10 +3,10 @@
 
 <div id = "eventFormPanel" ng-show = "event.activePanel">
   
-  <ng-include src ="'app/views/events/_venueDetails.html'"></ng-include>
+  <ng-include src ="'events/_venueDetails.html'"></ng-include>
   
   <form name = "eventDetails" id = "eventDetails">
-    <ng-include src="'app/views/events/_form.html'"></ng-include>
+    <ng-include src="'events/_form.html'"></ng-include>
     <button ng-click = "event.createEvent()" ng-disabled = "!eventDetails.$valid" ng-show = "event.activePanel">Create Event</button>
   </form>
 

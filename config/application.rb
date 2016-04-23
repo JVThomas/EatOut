@@ -27,6 +27,8 @@ module EatOut
     config.to_prepare do
       DeviseController.respond_to :json
     end
+
+    config.angular_templates.ignore_prefix  = %w(app/views/)
   
   end
 end

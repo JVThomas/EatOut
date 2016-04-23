@@ -1,9 +1,8 @@
-//directive, not checked yet, will do tomorrow
 function venueItem($rootScope){
   return{
     controllerAs:'venueCtrl',
     scope:{},
-    templateUrl:'app/views/events/directives/venueItem.html',
+    templateUrl:'events/directives/venueItem.html',
     bindToController:{
       venue: '=venueItem'
     },
