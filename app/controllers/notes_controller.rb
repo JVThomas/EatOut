@@ -17,7 +17,6 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     Note.destroy(params[:id])
   end
 
