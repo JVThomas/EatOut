@@ -19,5 +19,4 @@
 //= require angular-cookies.min
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
