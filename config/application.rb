@@ -29,6 +29,6 @@ module EatOut
     end
 
     config.angular_templates.ignore_prefix  = %w(app/views/)
-  
+    config.assets.initialize_on_precompile = false
   end
 end
