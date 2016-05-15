@@ -1,8 +1,10 @@
-function AuthController($scope,$state,Auth){
-  $scope.login = function() {
+function AuthController($state,Auth){
+  var ctrl = this;
+  
+  ctrl.login = function() {
     var credentials = {
-      email: $scope.user.email,
-      password: $scope.user.password
+      email: ctrl.user.email,
+      password: ctrl.user.password
     }
     Auth.login(credentials).then(function(){
       $state.go('home.main');
@@ -11,12 +13,12 @@ function AuthController($scope,$state,Auth){
     });
   };
 
-  $scope.register = function() {
+  ctrl.register = function() {
     var credentials = {
-      username: $scope.user.username,
-      email: $scope.user.email,
-      password: $scope.user.password,
-      password_confirmation: $scope.user.passwordConfirmation
+      username: ctrl.user.username,
+      email: ctrl.user.email,
+      password: ctrl.user.password,
+      password_confirmation: ctrl.user.passwordConfirmation
     }
     Auth.register(credentials).then(function(resp){
       $state.go('home.main');

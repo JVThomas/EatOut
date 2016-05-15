@@ -9,7 +9,7 @@
             name = "email"
             type="email"
             required="required"
-            ng-model = "user.email"
+            ng-model = "auth.user.email"
             placeholder = "Email Address"
           />
   </div>
@@ -24,10 +24,10 @@
               name = "password"
               type = "password"
               required = "required"
-              ng-model = "user.password"
+              ng-model = "auth.user.password"
               minlength = "8"
              />
   </div>
   
-  <button type = "submit" ng-click = "login(user)" ng-disabled = "!loginForm.$valid">Submit</input>
+  <button type = "submit" ng-click = "auth.login()" ng-disabled = "!loginForm.$valid">Submit</input>
 </form>

@@ -1,4 +1,3 @@
-require 'pry'
 class FoursquareController < ApplicationController
   def search
     foursquare = FoursquareService.new

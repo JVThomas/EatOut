@@ -94,11 +94,5 @@ angular
       }); //end of states     
         
       $urlRouterProvider.otherwise('/');
-  })
-  .run(function($rootScope, $location){
-
-    $rootScope.$on('$stateChangeStart', 
-      function (event, toState, toParams){
-        console.log(toParams)
-      });
-});
+  });
+ 

@@ -8,7 +8,7 @@
              name = "username"
              type = "text"
              required = "required"
-             ng-model = "user.username"
+             ng-model = "auth.user.username"
              placeholder = "Username"
              />
   </div>
@@ -23,7 +23,7 @@
             name = "email"
             type="email"
             required="required"
-            ng-model = "user.email"
+            ng-model = "auth.user.email"
             placeholder = "Email Address"
           />
   </div>
@@ -38,7 +38,7 @@
               name = "password"
               type = "password"
               required = "required"
-              ng-model = "user.password"
+              ng-model = "auth.user.password"
               minlength = "8"
              />
   </div>
@@ -52,9 +52,9 @@
                               name = "passwordConfirmation"
                               type = "password"
                               required = "required"
-                              ng-model = "user.passwordConfirmation"
-                              pwd-confirmation = "user.password"
+                              ng-model = "auth.user.passwordConfirmation"
+                              pwd-confirmation = "auth.user.password"
                             />
   </div>
-  <button type = "submit" ng-click = "register(user)" ng-disabled = "!registerForm.$valid">Submit</input>
+  <button type = "submit" ng-click = "auth.register()" ng-disabled = "!registerForm.$valid">Submit</input>
 </form>
