@@ -1,6 +1,6 @@
 function NoteFactory($resource){
   
-  var Note = $resource('http://localhost:3000/notes/:id',{id : '@id'}, {
+  var Note = $resource('https://eatoutapp.herokuapp.com/notes/:id',{id : '@id'}, {
     update:{
       method: 'PUT'
     }
