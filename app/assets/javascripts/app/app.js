@@ -1,4 +1,3 @@
-'use strict';
 angular
   .module('app',['ui.router','Devise','templates', 'ngResource', 'ngCookies', 'ngMessages'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,$urlRouterProvider){
