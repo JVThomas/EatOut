@@ -102,11 +102,11 @@ body{
 }
 
 .new-event-image{
-  background: url("<%= asset_path(set-table-free-license-cc0.jpg) %>"); 
+  background: url("<%= asset_path('set-table-free-license-cc0.jpg') %>"); 
 }
 
 .view-events-image{
-  background: url("<%= asset_pathHFH6U1U5T4.jpg)%>");  
+  background: url("<%= asset_path('HFH6U1U5T4.jpg')%>");  
 }
 
 .new-event-image, .view-events-image{
