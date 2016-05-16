@@ -11,8 +11,6 @@ function EventShowController($state,$stateParams,$cookies,EventFactory){
   }
 }
 
-EventShowController.$inject = ['$state','$stateParams','$cookies','EventFactory'];
-
 angular
   .module('app')
   .controller('EventShowController', EventShowController);

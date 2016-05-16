@@ -61,8 +61,6 @@ function EventController($filter,$cookies, $state, $stateParams, EventFactory, V
   
 }
 
-EventController.$inject = ['$filter','$cookies', '$state', '$stateParams', 'EventFactory', 'VenueFactory', 'NoteFactory','$rootScope'];
-
 angular
   .module('app')
   .controller('EventController', EventController);

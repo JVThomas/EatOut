@@ -28,8 +28,6 @@ function AuthController($state,Auth){
   };
 }
 
-AuthController.$inject = ['$state', 'Auth'];
-
 angular
   .module('app')
   .controller("AuthController",AuthController);

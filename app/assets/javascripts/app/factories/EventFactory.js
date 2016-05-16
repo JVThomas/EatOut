@@ -7,8 +7,6 @@ function EventFactory($resource){
   return Event;
 }
 
-EventFactory.$inject = ['$resource'];
-
 angular
   .module('app')
   .factory('EventFactory', EventFactory);

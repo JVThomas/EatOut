@@ -8,8 +8,6 @@ function NoteFactory($resource){
   return Note;
 }
 
-NoteFactory.$inject = ['$resource'];
-
 angular
   .module('app')
   .factory('NoteFactory', NoteFactory);

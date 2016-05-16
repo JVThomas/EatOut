@@ -3,8 +3,6 @@ function VenueFactory($resource){
   return Venue;
 }
 
-VenueFactory.$inject = ['$resource'];
-
 angular
   .module('app')
   .factory('VenueFactory', VenueFactory);

@@ -15,8 +15,6 @@ function venueItem($rootScope){
   }
 }
 
-venueItem.$inject = ['$rootScope'];
-
 angular
   .module('app')
   .directive('venueItem', venueItem);

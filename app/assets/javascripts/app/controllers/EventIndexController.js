@@ -3,8 +3,6 @@ function EventIndexController(userEvents){
   ctrl.userEvents = userEvents;
 }
 
-EventIndexController.$inject = ['userEvents'];
-
 angular
   .module('app')
   .controller('EventIndexController',EventIndexController);
