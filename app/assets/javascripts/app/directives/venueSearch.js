@@ -3,7 +3,7 @@ function venueSearch(FoursquareService, $rootScope){
     scope:{},
     controllerAs: 'venueSearchCtrl',
     templateUrl: 'events/directives/venueSearch.html',
-    controller: function(FoursquareService,$rootScope){
+    controller: ['FoursquareService','$rootScope', function(FoursquareService,$rootScope){
       var ctrl = this;
       ctrl.findVenues = function(){
         FoursquareService.getVenues(ctrl.params).then(function(resp){
@@ -11,7 +11,7 @@ function venueSearch(FoursquareService, $rootScope){
           $rootScope.$broadcast('venueSearch', ctrl.searchResults);
         });
       }
-    }
+    }]
   }
 }
 

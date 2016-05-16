@@ -3,7 +3,7 @@ function venueList($rootScope,$filter){
     scope:{},
     controllerAs: 'venueList',
     templateUrl:'events/directives/venueList.html',
-    controller: function($rootScope,$filter){
+    controller: ['$rootScope','$filter',function($rootScope,$filter){
       var ctrl = this;
       ctrl.reverse = true;
       ctrl.resultsFoundBool = true;
@@ -18,7 +18,7 @@ function venueList($rootScope,$filter){
         
         (ctrl.searchResults === undefined || ctrl.searchResults.length === 0) ? ctrl.resultsFoundBool = false :  ctrl.resultsFoundBool = true; 
       });
-    }
+    }]
   }
 }
 

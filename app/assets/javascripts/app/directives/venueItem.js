@@ -6,12 +6,12 @@ function venueItem($rootScope){
     bindToController:{
       venue: '=venueItem'
     },
-    controller:function($rootScope){
+    controller:['$rootScope',function($rootScope){
       var ctrl = this;
       this.selectVenue = function(){
         $rootScope.$broadcast('selectVenue', ctrl.venue);
       }
-    }
+    }]
   }
 }
 
