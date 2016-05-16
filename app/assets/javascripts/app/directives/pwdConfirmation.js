@@ -15,6 +15,8 @@ function pwdConfirmation(){
   };
 }
 
+pwdConfirmation.$inject = [];
+
 angular
   .module('app')
   .directive('pwdConfirmation',pwdConfirmation)
