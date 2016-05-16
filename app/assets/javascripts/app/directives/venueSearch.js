@@ -15,6 +15,8 @@ function venueSearch(FoursquareService, $rootScope){
   }
 }
 
+venueSearch.$inject = ['FoursquareService', '$rootScope'];
+
 angular
   .module('app')
   .directive('venueSearch', venueSearch);

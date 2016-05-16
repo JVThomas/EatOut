@@ -22,6 +22,8 @@ function venueList($rootScope,$filter){
   }
 }
 
+venueList.$inject = ['$rootScope', '$filter'];
+
 angular
   .module('app')
   .directive('venueList', venueList);
