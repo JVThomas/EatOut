@@ -57,9 +57,10 @@ function EventController($filter,$cookies, $state, $stateParams, EventFactory, V
     ctrl.venue.location = venue.location.formattedAddress.join('\n');
     ctrl.venue.contact = venue.contact.formattedPhone;
     ctrl.panelActivate();
-  });
-  
+  }); 
 }
+
+EventController.$inject = ['$filter','$cookies', '$state', '$stateParams', 'EventFactory', 'VenueFactory', 'NoteFactory','$rootScope'];
 
 angular
   .module('app')

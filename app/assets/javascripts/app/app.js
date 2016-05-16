@@ -1,6 +1,7 @@
+'use strict';
 angular
   .module('app',['ui.router','Devise','templates', 'ngResource', 'ngCookies', 'ngMessages'])
-  .config(function($stateProvider,$urlRouterProvider){
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,$urlRouterProvider){
     $stateProvider
       .state('home',{
         url: '/',
@@ -94,5 +95,4 @@ angular
       }); //end of states     
         
       $urlRouterProvider.otherwise('/');
-  });
- 
+  }]);

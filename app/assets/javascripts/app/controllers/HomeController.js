@@ -28,9 +28,9 @@ function HomeController($scope,$state,Auth,$cookies){
   $scope.$on('devise:new-registration', function(event, user) {
     ctrl.setUser(user);
   });
-
-
 }
+
+HomeController.$inject = ['$scope','$state','Auth','$cookies'];
 
 angular
   .module('app')

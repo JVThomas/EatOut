@@ -9,6 +9,8 @@ function FoursquareService($http){
   }
 }
 
+FoursquareService.$inject = ['$http'];
+
 angular
   .module('app')
   .service('FoursquareService',FoursquareService);
