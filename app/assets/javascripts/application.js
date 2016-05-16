@@ -10,13 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular.min
-//= require devise-min
+//= require angular/angular
+//= require angular-devise/lib/devise
 //= require angular-rails-templates
-//= require angular-resource.min
-//= require angular-ui-router.min
-//= require angular-messages.min
-//= require angular-cookies.min
+//= require angular-resource/angular-resource
+//= require angular-ui-router/release/angular-ui-router
+//= require angular-messages/angular-messages
+//= require angular-cookies/angular-cookies
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
