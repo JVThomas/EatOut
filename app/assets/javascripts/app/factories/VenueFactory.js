@@ -3,7 +3,7 @@ function VenueFactory($resource){
   return Venue;
 }
 
-VenueFactory.$inject = [$resource];
+VenueFactory.$inject = ['$resource'];
 
 angular
   .module('app')
