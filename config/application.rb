@@ -29,6 +29,7 @@ module EatOut
     end
 
     config.angular_templates.ignore_prefix  = %w(app/views/)
+    config.assets.precompile += %w( .svg .eot .woff .ttf .png .jpg .gif)
   
   end
 end
