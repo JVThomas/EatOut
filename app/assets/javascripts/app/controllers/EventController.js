@@ -1,4 +1,4 @@
-function EventController($filter,$cookies, $state, $stateParams, EventFactory, VenueFactory, NoteFactory,$rootScope){
+function EventController($filter,$cookies, $state, $stateParams, EventFactory, VenueFactory, NoteFactory,$rootScope, $scope){
   
   var ctrl = this;
   ctrl.user_id = JSON.parse($cookies.get('user')).id;
@@ -52,15 +52,19 @@ function EventController($filter,$cookies, $state, $stateParams, EventFactory, V
     });
   }
 
-  $rootScope.$on('selectVenue', function(event,venue){
+  var unbindSelect = $rootScope.$on('selectVenue', function(event,venue){
     ctrl.venue.name = venue.name;
     ctrl.venue.location = venue.location.formattedAddress.join('\n');
     ctrl.venue.contact = venue.contact.formattedPhone;
     ctrl.panelActivate();
   }); 
+
+  $scope.$on('destroy',function(){
+    unbindSelect();
+  })
 }
 
-EventController.$inject = ['$filter','$cookies', '$state', '$stateParams', 'EventFactory', 'VenueFactory', 'NoteFactory','$rootScope'];
+EventController.$inject = ['$filter','$cookies', '$state', '$stateParams', 'EventFactory', 'VenueFactory', 'NoteFactory','$rootScope', '$scope'];
 
 angular
   .module('app')

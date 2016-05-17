@@ -17,17 +17,23 @@ function HomeController($scope,$state,Auth,$cookies){
     ctrl.user = $cookies.get('user');
   }
 
-  $scope.$on('devise:login', function(event, currentUser) {
+  var unbindLogin = $scope.$on('devise:login', function(event, currentUser) {
     ctrl.setUser(currentUser);
   });
   
-  $scope.$on('devise:new-session', function(event, currentUser) {
-    ctrl.setUser(currentUser)
+  var unbindSession = $scope.$on('devise:new-session', function(event, currentUser) {
+    ctrl.setUser(currentUser);
   }); 
 
-  $scope.$on('devise:new-registration', function(event, user) {
+  var unbindRegistration = $scope.$on('devise:new-registration', function(event, user) {
     ctrl.setUser(user);
   });
+
+  $scope.$on('destroy', function(){
+    unbindLogin();
+    unbindSession();
+    unbindRegistration();
+  })
 }
 
 HomeController.$inject = ['$scope','$state','Auth','$cookies'];

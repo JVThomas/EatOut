@@ -12,17 +12,22 @@ function venueList($rootScope,$filter){
         ctrl.filteredList = $filter('filter')(ctrl.searchResults, ctrl.searchTerm);
       };
       
-      $rootScope.$on('venueSearch', function(event, results){
+      var unbindSearch = $rootScope.$on('venueSearch', function(event, results){
         ctrl.searchResults = results;
         ctrl.filteredList = ctrl.searchResults;
         
         (ctrl.searchResults === undefined || ctrl.searchResults.length === 0) ? ctrl.resultsFoundBool = false :  ctrl.resultsFoundBool = true; 
       });
-    }]
+    }],
+    link: function(scope, elem, attr, ctrl){
+      scope.$on("destroy", function(){
+        ctrl.unbindSearch();
+      });
+    }
   }
-}
 
-venueList.$inject = ['$rootScope', '$filter'];
+  venueList.$inject = ['$rootScope', '$filter'];
+}
 
 angular
   .module('app')
