@@ -33,9 +33,9 @@ module EatOut
 
     config.action_dispatch.default_headers = {
         'Access-Control-Allow-Origin' => 'http://eatoutapp.herokuapp.com',
-        'Access-Control-Request-Method' => '*'
-        'Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS'
-        'Access-Control-Allow-Headers' => 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token');
+        'Access-Control-Request-Method' => '*',
+        'Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers' => 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token';
       }
   
   end
