@@ -34,8 +34,8 @@ module EatOut
     config.action_dispatch.default_headers = {
         'Access-Control-Allow-Origin' => '*',
         'Access-Control-Request-Method' => '*',
-        'Access-Control-Allow-Methods' => 'PUT, GET, POST, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers' => 'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token'
+        'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
+        'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
       }
   
   end
