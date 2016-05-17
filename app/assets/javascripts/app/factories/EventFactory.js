@@ -1,6 +1,6 @@
 function EventFactory($resource){
 
-  var Event = $resource('https://eatoutapp.herokuapp.com/events/:id',{id:'@id'},{
+  var Event = $resource('http://eatoutapp.herokuapp.com/events/:id',{id:'@id'},{
     'update': {method: "PUT"}
   });
 
