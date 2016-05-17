@@ -1,5 +1,5 @@
 function VenueFactory($resource){
-  var Venue = $resource('http://eatoutapp.herokuapp.com/venues/:id', {id:'@id'},{'update':{method:'PUT'}});
+  var Venue = $resource('http://localhost:3000/venues/:id', {id:'@id'},{'update':{method:'PUT'}});
   return Venue;
 }
 

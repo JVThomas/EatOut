@@ -1,7 +1,7 @@
 function FoursquareService($http){
   
   this.getVenues = function(input){
-    return $http.get('http://eatoutapp.herokuapp.com/venues/search.json', 
+    return $http.get('http://localhost:3000/venues/search.json', 
       {params:
         {near: input.near, query: input.query}
       }
