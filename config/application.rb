@@ -37,13 +37,5 @@ module EatOut
         resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put]
       end
     end
-
-    #config.action_dispatch.default_headers = {
-    #    'Access-Control-Allow-Origin' => '*',
-    #    'Access-Control-Request-Method' => '*',
-    #    'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
-    #    'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    #  }
-  
   end
 end
